@@ -34,7 +34,7 @@ body {
 
 #nav {
     background: #0096C7;
-    border: 2px solid #30252d; 
+    border: 2px solid #1e1d23; 
     border-radius: 0.5em;
     margin: 0.5em 0;
     padding: 0.8em; 
@@ -139,9 +139,9 @@ body {
 }
 
 h2 {
-    color: #64485e; 
+    color: #1b192e; 
     font-size: 1.8em;
-    border-bottom: 2px solid #c586b5; 
+    border-bottom: 2px solid #161370; 
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -322,7 +322,7 @@ body {
 }
 
 #nav a:hover {
-    color: #64485e;           
+    color: #231f36;           
     transform: scale(1.1);   
 }
 
@@ -401,12 +401,12 @@ body {
     display: block;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #c084fc;
+    color: #ffffff;
 }
 
 /* Botón */
 .producto button {
-    background: #c084fc;
+    background: #00B4D8;
     border: none;
     padding: 10px 20px;
     border-radius: 25px;
@@ -416,5 +416,5 @@ body {
 }
 
 .producto button:hover {
-    background: #a855f7;
+    background: #0077B6;
 }
