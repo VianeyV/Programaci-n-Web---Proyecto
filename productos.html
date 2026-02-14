@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Productos - HydraSmart</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -12,6 +14,11 @@
     <header class="header">
         HydraSmart Bottles
     </header>
+
+    <button id="loginBtn" onclick="abrirLogin()">
+        <i class="fa-solid fa-user"></i>
+    </button>
+
 
     <nav class="nav">
         <ul>
@@ -108,6 +115,21 @@
         </div>
     </section>
 
+</div>
+
+<script src="script.js"></script>
+
+<div id="loginModal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+        <h2>Iniciar sesión</h2>
+
+        <form onsubmit="iniciarSesion(event)">
+            <input type="email" id="usuario" placeholder="Usuario (correo)" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
 </div>
 
 <script src="script.js"></script>
