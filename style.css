@@ -447,8 +447,8 @@ body {
     background: #0077B6;
 }
 
-/*login*/
 
+/* LOGIN*/
 .modal {
     display: none;
     position: fixed;
@@ -460,61 +460,199 @@ body {
     background: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px); /* Añade un desenfoque elegante al fondo */
 }
 
 .modal-contenido {
     background: white;
-    padding: 30px;
-    border-radius: 12px;
-    width: 300px;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
 
+/* Estilos de los inputs */
 .modal-contenido input {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.modal-contenido button {
+.modal-contenido input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(0, 119, 182, 0.2);
+}
+
+/* Botón de Login con estilo de HydraSmart */
+.btn-login {
     width: 100%;
-    padding: 10px;
-    background: #0077B6;
+    padding: 12px;
+    background: var(--primary);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
 }
 
-.modal-contenido button:hover {
-    background: #005f8f;
+.btn-login:hover {
+    background: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(3, 4, 94, 0.3);
 }
 
-.cerrar {
-    float: right;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.modal-contenido {
-    position: relative;
-}
-
+/* Botón de cerrar */
 .cerrar {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
 }
 
 .cerrar:hover {
-    color: red;
+    color: #ff4757;
 }
+
+/***************************  ESTILOS LOGIN DESLIZABLE  *****************/
+.container-slide {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Estado Activo (Cuando se desliza) */
+.container-slide.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.container-slide.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% { opacity: 0; z-index: 1; }
+    50%, 100% { opacity: 1; z-index: 5; }
+}
+
+/* Diseño de los Formularios */
+.form-container form {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container-slide.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: var(--primary);
+    background: linear-gradient(to right, var(--dark), var(--primary));
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container-slide.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left { transform: translateX(-20%); }
+.container-slide.right-panel-active .overlay-left { transform: translateX(0); }
+
+.overlay-right { right: 0; transform: translateX(0); }
+.container-slide.right-panel-active .overlay-right { transform: translateX(20%); }
+
+/* Botones Ghost (Transparentes) */
+button.ghost {
+    background-color: transparent;
+    border-color: #FFFFFF;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+
 
 
 #header {

@@ -110,15 +110,43 @@
 
 
 <div id="loginModal" class="modal">
-    <div class="modal-contenido">
+    <div class="container-slide" id="container-slide">
         <span class="cerrar" onclick="cerrarLogin()">&times;</span>
-        <h2>Iniciar sesión</h2>
+        
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h2>Crear Cuenta</h2>
+                <input type="text" placeholder="Nombre completo" required />
+                <input type="email" placeholder="Correo electrónico" required />
+                <input type="password" placeholder="Contraseña" required />
+                <button type="button" class="btn-login" onclick="Swal.fire('Registrado', 'Cuenta creada con éxito', 'success')">Registrarse</button>
+            </form>
+        </div>
 
-        <form onsubmit="iniciarSesion(event)">
-            <input type="email" id="usuario" placeholder="Usuario (correo)" required>
-            <input type="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
+        <div class="form-container sign-in-container">
+            <form onsubmit="iniciarSesion(event)">
+                <h2>Iniciar Sesión</h2>
+                <input type="email" id="usuario" placeholder="Correo electrónico" required />
+                <input type="password" placeholder="Contraseña" required />
+                <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="btn-login">Ingresar</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h2>¡Hola de nuevo!</h2>
+                    <p>Si ya tienes cuenta, inicia sesión para ver tus estadísticas.</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h2>¡Bienvenido, Amigo!</h2>
+                    <p>Regístrate y comienza tu hidratación inteligente con nosotros.</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
