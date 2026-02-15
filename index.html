@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>HydraSmart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div id="container">
+
+    <div id="container">
+    <header id="header">
+        <div class="header-left">
+            <i class="fa-solid fa-bottle-water logo-icon"></i>
+            <span class="brand-name">HydraSmart</span>
+        </div>
+        
+        <div class="header-actions">
+            <button id="cartBtn" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </button>
+            <button id="loginBtn" onclick="abrirLogin()">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </div>
+    </header>
+
+
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Catálogo</a></li>
+            <li><a href="#section">Misión</a></li>
+            <li><a href="#footer">Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="cart-modal" id="cart-modal" style="display: none;">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-bag"></i> Tu Carrito</h3>
+                <span class="close-cart" id="close-cart-btn">×</span>
+            </div>
+            <div class="cart-body" id="cart-items-container">
+                <p class="empty-cart">Tu carrito está vacío</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0</span>
+                </div>
+                <button class="btn checkout-btn" id="btn-go-checkout">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="hero">
+        <div class="hero-text">
+            <h1>Mantente hidratado de forma inteligente</h1>
+            <p>Botellas inteligentes anti-deshidratación</p>
+        </div>
+    </section>
+
+    <div class="catalogo-btn">
+        <a href="productos.html">Ver catálogo</a>
+    </div>
+
+
+<section id="empresa">
+        <h1>Conoce sobre la empresa</h1>
+    </section>
+
+    <div id="contenido">
+        <section id="section">
+            <div class="article fade-in">
+                <h2>Nuestra Misión</h2>
+                <p>Revolucionar la hidratación diaria mediante tecnología inteligente, ayudando a las personas a alcanzar sus metas de salud con botellas que monitorean y recuerdan el consumo de agua de forma personalizada.</p>
+            </div>
+
+            <div class="article fade-in">
+                <h2>Nuestra Visión</h2>
+                <p>Ser la marca líder global en soluciones de hidratación inteligente, reconocida por integrar bienestar, sostenibilidad y tecnología de vanguardia en la vida cotidiana.</p>
+            </div>
+        </section>
+
+        <aside id="aside" class="fade-in">
+            <h2>Por qué HydraSmart?</h2>
+            <p><strong>Sensores de Precisión:</strong> Mide cuánto bebes exactamente.</p>
+            <p><strong>Recordatorios LED:</strong> Tu botella brilla cuando es hora de beber.</p>
+            <p><strong>App Sync:</strong> Conecta tu progreso con tu teléfono.</p>
+        </aside>
+    </div>
+
+    <footer id="footer">
+        <h3>Integrantes</h3>
+        <div class="integrantes">
+            <span>Jhuliana Beltrán</span>
+            <span>Vianey Rivera</span>
+            <span>Maira Calderón</span>
+            <span>Yeison Rodriguez</span>
+            <span>Jhan Carlo Melo</span>
+        </div>
+    </footer>
+
+</div>
+
+
+<div id="loginModal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+        <h2>Iniciar sesión</h2>
+
+        <form onsubmit="iniciarSesion(event)">
+            <input type="email" id="usuario" placeholder="Usuario (correo)" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

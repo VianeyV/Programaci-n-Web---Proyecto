@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos - HydraSmart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        HydraSmart Bottles
+    </header>
+
+    <button id="loginBtn" onclick="abrirLogin()">
+        <i class="fa-solid fa-user"></i>
+    </button>
+
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+        </ul>
+    </nav>
+
+    <section class="productos-section">
+        <h2>Nuestro Catálogo</h2>
+
+        <div class="catalogo-grid">
+
+            <div class="producto">
+                <img src="https://media.glamour.es/photos/660d76aff4b82e1215ab6c89/master/w_2048%2Cc_limit/botella%2520chili.jpg" alt="Botella AquaSmart Classic">
+                <h3>AquaSmart Classic</h3>
+                <p>Botella inteligente de acero inoxidable con acabado mate elegante.</p>
+                <span class="precio">$49.900 COP</span>
+                <button onclick="comprar('AquaSmart Classic')">Comprar</button>
+
+            </div>
+
+            <div class="producto">
+                <img src="https://media.revistavanityfair.es/photos/68480d270d54ae712dd2bea9/16:9/w_1920,c_limit/GettyImages-1618713841.jpg" alt="Botella AquaSmart Trio Colors">
+                <h3>AquaSmart Trio Colors</h3>
+                <p>Set de botellas en tonos suaves, diseñadas para combinar estilo y funcionalidad.</p>
+                <span class="precio">$160.900 COP</span>
+                <button onclick="comprar('AquaSmart Trio Colors')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://media.glamour.es/photos/660d71a8c3f0e0cb2d10b882/master/w_2048%2Cc_limit/botella%2520con%2520inicial.jpg" alt="Botella AquaSmart Pure Minimal">
+                <h3>AquaSmart Pure Minimal</h3>
+                <p>Diseño minimalista. Ligera, moderna y pensada para quienes prefieren simplicidad.</p>
+                <span class="precio">$64.900 COP</span>
+                <button onclick="comprar('AquaSmart Pure Minimal')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://www.grupobillingham.com/blog/wp-content/uploads/2021/04/bidon-botella-de-aluminio-400-ml-grabado-verde-claro.jpg" alt="Botella AquaSmart Sport Green">
+                <h3>AquaSmart Sport Green</h3>
+                <p>Botella deportiva resistente con agarre ergonómico.</p>
+                <span class="precio">$89.900 COP</span>
+                <button onclick="comprar('AquaSmart Sport Green')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://www.nordicnest.es/assets/blobs/hay-botella-termo-sowden-035-l-light-pink/44565-02-02-6ae52ec754.jpg?preset=large&dpr=2" alt="Botella AquaSmart Mini Pop">
+                <h3>AquaSmart Mini Pop</h3>
+                <p>Colección compacta y colorida, fácil de transportar.</p>
+                <span class="precio">$130.900 COP</span>
+                <button onclick="comprar('AquaSmart Mini Pop')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://www.grupobillingham.com/blog/wp-content/uploads/2021/04/botellas-bambu-2.jpg" alt="Botella AquaSmart Bamboo Eco">
+                <h3>AquaSmart Bamboo Eco</h3>
+                <p>Botella ecológica con acabado en bambú y acero térmico.</p>
+                <span class="precio">$74.900 COP</span>
+                <button onclick="comprar('AquaSmart Bamboo Eco')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://www.ceroresiduo.com/wp-content/uploads/064009001-570x570.webp" alt="Botella AquaSmart Copper Pro">
+                <h3>AquaSmart Copper Pro</h3>
+                <p>Diseño premium en tono cobre con aislamiento térmico avanzado.</p>
+                <span class="precio">$69.900 COP</span>
+                <button onclick="comprar('AquaSmart Copper Pro')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://www.ceroresiduo.com/wp-content/uploads/019009002-01-570x570.webp" alt="Botella AquaSmart Steel Mini">
+                <h3>AquaSmart Steel Mini</h3>
+                <p>Versión compacta en acero inoxidable pulido.</p>
+                <span class="precio">$54.900 COP</span>
+                <button onclick="comprar('AquaSmart Steel Mini')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://cdn.pacifiko.com/image/cache/catalog/p/YWZkY2RkZj-1000x1000.jpg" alt="Botella AquaSmart Pink Active">
+                <h3>AquaSmart Pink Active</h3>
+                <p>Botella deportiva vibrante con sistema de apertura rápida.</p>
+                <span class="precio">$69.900 COP</span>
+                <button onclick="comprar('AquaSmart Pink Active')">Comprar</button>
+            </div>
+
+            <div class="producto">
+                <img src="https://aguaparaeventos.com/3652-large_default/botella-step-up-acero-inoxidable-.jpg" alt="Botella AquaSmart Night Edition">
+                <h3>AquaSmart Night Edition</h3>
+                <p>Acabado oscuro elegante con diseño moderno.</p>
+                <span class="precio">$79.900 COP</span>
+                <button onclick="comprar('AquaSmart Night Edition')">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+<div id="loginModal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarLogin()">&times;</span>
+        <h2>Iniciar sesión</h2>
+
+        <form onsubmit="iniciarSesion(event)">
+            <input type="email" id="usuario" placeholder="Usuario (correo)" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
