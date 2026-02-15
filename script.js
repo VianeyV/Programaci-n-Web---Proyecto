@@ -66,10 +66,70 @@ function toggleCart() {
 // Cerrar carrito con la X
 document.getElementById("close-cart-btn")?.addEventListener("click", toggleCart);
 
-// Función de compra 
+
+// 1. Lógica para el botón de Finalizar Compra
+document.getElementById("btn-go-checkout")?.addEventListener("click", function(e) {
+    const btn = this;
+    
+    //Crear el icono
+    const flyingCart = document.createElement('i');
+    flyingCart.className = 'fa-solid fa-cart-shopping cart-animation-icon';
+    
+    // posición exacta en la pantalla
+    const rect = btn.getBoundingClientRect();
+    
+    // Por si acaso 
+    Object.assign(flyingCart.style, {
+        position: 'fixed',
+        top: rect.top + 'px',
+        left: rect.left + 'px',
+        color: '#0077B6',
+        fontSize: '2rem',
+        zIndex: '999999'
+    });
+    
+    // Pa que no tape el modal
+    document.body.appendChild(flyingCart);
+
+    // Feedback en el botón
+    const originalText = btn.innerText;
+    btn.innerText = "¡Enviando!";
+    btn.style.opacity = "0.7";
+
+    // Finalizar proceso
+    setTimeout(() => {
+        flyingCart.remove();
+        
+        // Cerrar el carrito ANTES de la alerta para que no estorbe
+        if (typeof toggleCart === 'function') toggleCart();
+
+        Swal.fire({
+            title: 'Pedido Despachado',
+            text: 'Tu carrito ha salido volando hacia tu dirección.',
+            icon: 'success',
+            confirmButtonColor: '#0077B6'
+        });
+
+        // Resetear valores
+        if (document.getElementById("cart-count")) {
+            carritoCount = 0;
+            document.getElementById("cart-count").innerText = "0";
+        }
+        btn.innerText = originalText;
+        btn.style.opacity = "1";
+    }, 1200);
+});
+
 function comprar(nombre) {
     carritoCount++;
     document.getElementById("cart-count").innerText = carritoCount;
+
+    const btnEvent = event.currentTarget;
+    if (btnEvent && btnEvent.classList.contains('add-to-cart')) {
+        btnEvent.style.setProperty('--background-scale', '1.1');
+        setTimeout(() => btnEvent.style.setProperty('--background-scale', '1'), 200);
+    }
+
     Swal.fire({
         title: '¡Añadido!',
         text: `${nombre} ya está en tu carrito.`,
@@ -80,3 +140,8 @@ function comprar(nombre) {
         position: 'top-end'
     });
 }
+
+// Asegurar que el boton de cerrar funcione correctamente
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("close-cart-btn")?.addEventListener("click", toggleCart);
+});

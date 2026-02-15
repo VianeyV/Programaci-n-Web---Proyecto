@@ -652,4 +652,54 @@ body {
     margin-top: 15px;
 }
 
+/* */
+.add-to-cart span {
+    display: block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--text-color);
+    opacity: var(--text-o);
+    transform: translateX(var(--text-x)) translateZ(0);
+}
 
+.add-to-cart .shirt,
+.add-to-cart .cart {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+}
+
+.add-to-cart:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    transition: background 0.25s;
+    background: var(--background, var(--background-default));
+    transform: scaleX(var(--background-scale)) translateZ(0);
+}
+
+
+/* Animación del carrito saliendo */
+.cart-animation-icon {
+    position: fixed !important;
+    z-index: 999999 !important;
+    pointer-events: none;
+    visibility: visible !important;
+    display: block !important;
+    animation: cart-out 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+}
+
+@keyframes cart-out {
+    0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+    20% { transform: translateX(-30px) rotate(-15deg); }
+    100% { transform: translateX(200vw) rotate(30deg); opacity: 0; }
+}
