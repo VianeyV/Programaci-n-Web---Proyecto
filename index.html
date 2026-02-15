@@ -10,20 +10,53 @@
 
 <div id="container">
 
-    <header id="header">HydraSmart Bottles</header>
-    <button id="loginBtn" onclick="abrirLogin()">
-        <i class="fa-solid fa-user"></i>
-    </button>
+    <div id="container">
+    <header id="header">
+        <div class="header-left">
+            <i class="fa-solid fa-bottle-water logo-icon"></i>
+            <span class="brand-name">HydraSmart</span>
+        </div>
+        
+        <div class="header-actions">
+            <button id="cartBtn" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </button>
+            <button id="loginBtn" onclick="abrirLogin()">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </div>
+    </header>
 
 
     <nav id="nav">
         <ul>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Catálogo</a></li>
             <li><a href="#section">Misión</a></li>
-            <li><a href="#aside">Objetivos</a></li>
-            <li><a href="#footer">Integrantes</a></li>
+            <li><a href="#footer">Contacto</a></li>
         </ul>
     </nav>
+
+
+    <div class="cart-modal" id="cart-modal" style="display: none;">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-bag"></i> Tu Carrito</h3>
+                <span class="close-cart" id="close-cart-btn">×</span>
+            </div>
+            <div class="cart-body" id="cart-items-container">
+                <p class="empty-cart">Tu carrito está vacío</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0</span>
+                </div>
+                <button class="btn checkout-btn" id="btn-go-checkout">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
 
     <section id="hero">
         <div class="hero-text">
@@ -43,25 +76,23 @@
 
     <div id="contenido">
         <section id="section">
-            <div class="article">
-                <h2>Misión</h2>
-                <p>Ofrecer sombras personalizadas que representen la esencia, personalidad y estilo de cada persona, combinando creatividad, tecnología y diseño para transformar algo cotidiano en una experiencia única e inolvidable.</p>
+            <div class="article fade-in">
+                <h2>Nuestra Misión</h2>
+                <p>Revolucionar la hidratación diaria mediante tecnología inteligente, ayudando a las personas a alcanzar sus metas de salud con botellas que monitorean y recuerdan el consumo de agua de forma personalizada.</p>
             </div>
 
-            <div class="article">
-                <h2>Visión</h2>
-                <p>Ser la empresa líder en la creación y comercialización de sombras humanas personalizadas, reconocida por su innovación, originalidad y por redefinir la forma en que las personas se expresan a través de su propia sombra.</p>
+            <div class="article fade-in">
+                <h2>Nuestra Visión</h2>
+                <p>Ser la marca líder global en soluciones de hidratación inteligente, reconocida por integrar bienestar, sostenibilidad y tecnología de vanguardia en la vida cotidiana.</p>
             </div>
         </section>
 
-        <aside id="aside">
-            <h2>Objetivos</h2>
-            <p>1. Diseñar y comercializar sombras personalizadas que se adapten a la identidad, estilo y preferencias de cada cliente, ofreciendo una experiencia innovadora y diferente en el mercado.</p>
-
-            <p>2. Fomentar la creatividad y la autoexpresión, transformando la sombra humana en un elemento artístico y significativo para las personas.</p>
-            <p>3. Posicionar la empresa como una marca original y confiable dentro del entorno digital, destacándose por su concepto único, calidad visual y atención al cliente.</p>
+        <aside id="aside" class="fade-in">
+            <h2>Por qué HydraSmart?</h2>
+            <p><strong>Sensores de Precisión:</strong> Mide cuánto bebes exactamente.</p>
+            <p><strong>Recordatorios LED:</strong> Tu botella brilla cuando es hora de beber.</p>
+            <p><strong>App Sync:</strong> Conecta tu progreso con tu teléfono.</p>
         </aside>
-
     </div>
 
     <footer id="footer">
