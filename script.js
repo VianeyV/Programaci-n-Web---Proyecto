@@ -66,6 +66,21 @@ function comprar(nombre) {
     });
 }
 
+// CONTACTO MODAL
+function abrirContacto(){
+document.getElementById("contactModal").style.display="flex";
+}
+
+function cerrarContacto(){
+document.getElementById("contactModal").style.display="none";
+}
+
+function enviarContacto(e){
+e.preventDefault();
+Swal.fire("Mensaje enviado","Pronto te contactaremos","success");
+cerrarContacto();
+}
+
 let carritoCount = 0;
 
 // Abrir y cerrar carrito
