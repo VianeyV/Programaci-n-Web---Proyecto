@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<div id="container">
-
     <div id="container">
     <header id="header">
         <div class="header-left">
@@ -22,7 +20,8 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="productos.html">Catálogo</a></li>
                 <li><a href="#section">Más</a></li>
-                <li><a href="#footer">Contacto</a></li>
+                <li><a href="#" onclick="abrirContacto()">Contacto</a></li>
+
             </ul>
         </nav>
         
@@ -72,7 +71,7 @@
 
             <div id="imagen" class="product-showcase">
                 <div class="glow-effect"></div>
-                <img src="/Imagenes/botella-removebg-preview.png" alt="Botella" class="floating-bottle">
+                <img src="Imagenes/botella-removebg-preview.png" alt="Botella" class="floating-bottle">
             </div>
         </div>
     </section>
@@ -139,7 +138,7 @@
             <span>Vianey Rivera</span>
             <span>Maira Calderón</span>
             <span>Yeison Rodriguez</span>
-            <span>Jhan Carlo Melo</span>
+            <span>Jhan Melo</span>
         </div>
     </footer>
 
@@ -186,6 +185,35 @@
         </div>
     </div>
 </div>
+
+
+<!-- MODAL CONTACTO -->
+<div id="contactModal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarContacto()">&times;</span>
+
+        <h2>Contáctanos</h2>
+
+        <form onsubmit="enviarContacto(event)">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button class="btn-login">Enviar</button>
+        </form>
+
+        <hr>
+
+        <h3>Redes sociales</h3>
+        <div style="display:flex; gap:20px; justify-content:center; font-size:25px;">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+    </div>
+</div>
+
 
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
