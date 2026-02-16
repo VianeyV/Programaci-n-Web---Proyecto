@@ -165,7 +165,7 @@ body {
 }
 
 .hero-info h1 {
-    font-size: 3.2em; 
+    font-size: 3.2em; /* Ajustamos un poco el tamaño */
     margin-bottom: 15px;
 }
 
@@ -288,6 +288,7 @@ body {
     background: linear-gradient(to right, #fff, var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 800;
 }
 
 #empresa p {
@@ -298,7 +299,6 @@ body {
     margin: 0 auto 30px auto;
 }
 
-/* Mini estadísticas para rellenar */
 .empresa-stats {
     display: flex;
     justify-content: center;
@@ -319,18 +319,45 @@ body {
     text-transform: uppercase;
 }
 
+/* DISEÑO MISIÓN VISIÓN Y EL OTRO*/
 #contenido {
     display: flex;
+    gap: 25px;
+    margin: 40px 0;
+    align-items: stretch;
+}
+
+#section {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-#section{
-    width: 65%;
-    background: transparent; 
-    margin-right: 1.5em;
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 2.5rem;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
 }
 
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
+}
 
+.card-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px var(--accent));
+}
 
 .article, #aside {
     background: white; 
@@ -355,14 +382,12 @@ h2 {
     text-align: center;
 }
 
-#aside{
+#aside {
     width: 35%;
-    background: #64485e65;
-    border-radius: 0.5em;
-    padding: 1em;
-    color: white;
-    text-align: center;
-    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(3, 4, 94, 0.6), rgba(0, 119, 182, 0.4));
 }
 
 #aside h2{
@@ -374,6 +399,27 @@ h2 {
     text-align: justify;
     font-size: 0.9em;
     line-height: 1.6;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.feature-item i {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-top: 4px;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #caf0f8;
 }
 
 #catalogo {
