@@ -285,14 +285,14 @@ body {
 }
 
 .text-gradient {
-    background: linear-gradient(to right, #fff, var(--accent));
+    background: linear-gradient(to right, #0814b7, var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
 }
 
 #empresa p {
-    color: #caf0f8;
+    color: #0326b4;
     font-size: 1.2rem;
     line-height: 1.6;
     max-width: 600px;
@@ -310,13 +310,14 @@ body {
     display: block;
     font-size: 1.8rem;
     font-weight: 800;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .stat-desc {
-    color: var(--accent);
+    color: rgba(11, 0, 48, 0.803);
     font-size: 0.8rem;
     text-transform: uppercase;
+    
 }
 
 /* DISEÑO MISIÓN VISIÓN Y EL OTRO*/
@@ -1062,3 +1063,4 @@ button.ghost {
     0%, 100% { transform: scale(1); opacity: 0.4; }
     50% { transform: scale(0.8); opacity: 0.2; }
 }
+
